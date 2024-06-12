@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Bank Account</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .account { margin-bottom: 20px; }
+        .transaction { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Bank Account</h1>
+    
+    <div class="account">
+        <h2>Account 1 (Rajat)</h2>
+        <button onclick="showDetails(account1)">Show Details</button>
+        <div class="transaction">
+            <input type="number" id="account1-deposit-amount" placeholder="Deposit Amount">
+            <button onclick="deposit(account1, 'account1-deposit-amount')">Deposit</button>
+        </div>
+        <div class="transaction">
+            <input type="number" id="account1-withdraw-amount" placeholder="Withdraw Amount">
+            <button onclick="withdraw(account1, 'account1-withdraw-amount')">Withdraw</button>
+        </div>
+        <div class="transaction">
+            <input type="number" id="account1-transfer-amount" placeholder="Transfer Amount">
+            <button onclick="transfer(account1, account2, 'account1-transfer-amount')">Transfer to Jay</button>
+        </div>
+        <div class="transaction">
+            <input type="number" id="account1-interest-rate" placeholder="Interest Rate">
+            <button onclick="addInterest(account1, 'account1-interest-rate')">Add Interest</button>
+        </div>
+        <pre id="account1-details"></pre>
+    </div>
+    
+    <div class="account">
+        <h2>Account 2 (Jay)</h2>
+        <button onclick="showDetails(account2)">Show Details</button>
+        <div class="transaction">
+            <input type="number" id="account2-deposit-amount" placeholder="Deposit Amount">
+            <button onclick="deposit(account2, 'account2-deposit-amount')">Deposit</button>
+        </div>
+        <div class="transaction">
+            <input type="number" id="account2-withdraw-amount" placeholder="Withdraw Amount">
+            <button onclick="withdraw(account2, 'account2-withdraw-amount')">Withdraw</button>
+        </div>
+        <div class="transaction">
+            <input type="number" id="account2-transfer-amount" placeholder="Transfer Amount">
+            <button onclick="transfer(account2, account1, 'account2-transfer-amount')">Transfer to Rajat</button>
+        </div>
+        <div class="transaction">
+            <input type="number" id="account2-interest-rate" placeholder="Interest Rate">
+            <button onclick="addInterest(account2, 'account2-interest-rate')">Add Interest</button>
+        </div>
+        <pre id="account2-details"></pre>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
